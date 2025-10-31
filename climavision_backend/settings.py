@@ -16,7 +16,13 @@ SECRET_KEY = 'django-insecure-ws&rh6)uss2hr0o4lgl^lo!9^+rm*qv%s7i__i-o05pi!9w*oo
 DEBUG = True
 
 # ✅ Remove Vercel host references
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'climaai-backendfinal.onrender.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://climaai-backendfinal.onrender.com'
+]
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -48,9 +54,13 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = "accounts.User"
 
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+# ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    'https://your-frontend-site.vercel.app',
+    'http://localhost:3000',
 ]
 
 REST_FRAMEWORK = {
